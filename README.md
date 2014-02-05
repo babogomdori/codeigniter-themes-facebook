@@ -22,7 +22,6 @@ $this->load->library('facebook_init');
 
 // Access the Facebook PHP SDK
 $data['loginUrl'] = $this->facebook->getLoginUrl(array('scope'=>'email'));
-
 ```
 
 ```
