@@ -6,18 +6,18 @@ class Home extends CI_Controller {
 	{
 		parent::__construct();
 		
-		$this->load->library('facebook');
-		$this->load->helper('url');
-
-		$this->facebook->enable_debug(TRUE);
+		// Load Facebook Library
+		$this->load->library('facebook_init');
 		
 		$this->_init();		
 	}
 	
 	private function _init() {
 	
+		// Set Template
 		$this->output->set_template('default');
 
+		// Load Template assets
 		$this->load->js('https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js');
 		$this->load->js('https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js');
 		$this->load->js('https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js');
@@ -27,22 +27,32 @@ class Home extends CI_Controller {
 	
 	function index()
 	{
-		// We can use the open graph place meta data in the head.
-		// This meta data will be used to create a facebook page automatically
-		// when we 'like' the page.
-		// 
-		// For more details see: http://developers.facebook.com/docs/opengraph
-		
-		$opengraph = 	array(
-							'type'				=> 'website',
-							'title'				=> 'Site Title',
-							'url'				=> site_url(),
-							'image'				=> '',
-							'description'		=> 'Site Description'
-						);
+					
+		// Access the Facebook library via $this->facebook		
+        $userId = $this->facebook->getUser();
+ 
+        // If user is not yet authenticated, the id will be zero
+        if($userId == 0){
+        
+            // Generate a login url
+            $data['loginUrl'] = $this->facebook->getLoginUrl(array('scope'=>'email,user_location'));
 
-		$this->load->vars('opengraph', $opengraph);
-		$this->load->section('sidebar', 'sections/menu');		
-		$this->load->view('home');
+			// Load view
+			$this->load->section('sidebar', 'sections/menu');		
+			$this->load->view('home',$data);
+            
+        } else {
+        
+            // Generate a logout url
+            $data['logoutUrl'] = $this->facebook->getLogoutUrl();
+        
+            // Get user's data and print it
+            $data['user'] = $this->facebook->api('/me');
+            
+            // Load view
+			$this->load->section('sidebar', 'sections/menu');		
+			$this->load->view('home',$data);            
+            
+        }						
 	}
 }
