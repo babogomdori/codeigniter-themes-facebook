@@ -12,8 +12,8 @@ CodeIgniter v.2.1.4, Custom Themes (Bootstrap v.3.1.0) &amp; Facebook Integratio
 
 ## Usage
 
-* Theme assets are located in the /assets/ folder. Main theme files are located in the application/views/themes/ folder.
-* If there's an update of the Facebook PHP SDK available, just replace 'facebook.php' and 'base_facebook.php' in /third_party/facebook/libraries/.
+* Theme assets are located in the /assets/ folder. Main theme files are located in the /application/views/themes/ folder.
+* If there's an update of the Facebook PHP SDK available, just replace 'facebook.php' and 'base_facebook.php' in /application/third_party/facebook/libraries/.
 
 
 ```
@@ -35,7 +35,7 @@ $this->load->css('https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.
 
 ## Example
 
-See for an example the Home controller /controllers/home.php
+See for an example the Home controller /application/controllers/home.php
 
 #### Credits
 
