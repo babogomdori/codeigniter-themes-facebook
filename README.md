@@ -1,5 +1,5 @@
 CodeIgniter, Themes & Facebook Integration
-===
+==
 
 CodeIgniter v.2.1.4, Custom Themes (Bootstrap v.3.1.0) &amp; Facebook Integration (PHP SDK v.3.2.3).
 
