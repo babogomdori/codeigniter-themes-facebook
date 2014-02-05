@@ -1,7 +1,9 @@
-CodeIgniter, Bootstrapped with Facebook Integration
+CodeIgniter, Themes & Facebook Integration
 =====================================
 
-CodeIgniter 2.1.4, Bootstrapped (3.1.0) with Custom Themes &amp; Facebook Integration.
+CodeIgniter 2.1.4, Custom Themes (Bootstrap 3.1.0) &amp; Facebook Integration.
+
+Theme assets are located in the /assets/ folder. Main theme files are located in the application/views/themes/ folder.
 
 ## Installation
 
@@ -11,6 +13,6 @@ CodeIgniter 2.1.4, Bootstrapped (3.1.0) with Custom Themes &amp; Facebook Integr
 4. Define Facebook settings in 'application/config/facebook.php'
 5. Go!
 
-Theme assets are located in the /assets/ folder. Main theme files are located in the application/views/themes/ folder.
+#### Credits
 
 Build upon [CodeIgniter-Facebook](https://github.com/elliothaughin/codeigniter-facebook) by Elliot Haughin and [CodeIgniter-Simplicity](https://github.com/scoumbourdis/codeigniter-simplicity) by John Skoumbourdis.
